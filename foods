@@ -1,0 +1,11 @@
+edible = ['meat','fries','chocolate','chicken','rice']
+notedible = ['trash','paper','pencil','cat','battery','sciccor']
+
+@bot.command()
+async def lunch(ctx):
+      await ctx.send("put edible foods: ")
+      msg = await bot.wait_for("message")
+      if msg.content in edible:
+            await ctx.send('you can eat it')
+      elif msg.content in notedible:
+            await ctx.send('you cannot eat it')
